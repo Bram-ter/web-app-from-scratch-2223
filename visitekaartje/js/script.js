@@ -1,19 +1,22 @@
+// Variables
 const title = document.querySelector("h1");
 
-// Create a request variable and assign a new XMLHttpRequest object to it.
-let request = new XMLHttpRequest()
+fetchData()
 
-// Open a new connection, using the GET request on the URL endpoint
-request.open('GET', 'https://cors-anywhere.herokuapp.com/https://whois.fdnd.nl/api/v1/members?first=200', true)
-request.onload = function () {
-  // Begin accessing JSON data here
-  var data = JSON.parse(this.response)
-
-    // console.log(data.members[2].slug) // cldex5bay48b60auozge35rdb
-    console.log(data.members[58])
-    title.textContent = data.members[58].name + ' ' + data.members[58].surname;
+function fetchData() {
+  const url = 'https://whois.fdnd.nl/api/v1/member?id=cldex5bay48b60auozge35rdb'
+  
+  const data = fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      changeH1(data)
+    })
 }
 
-// Send request
-request.send()
+function changeH1(data) {
+  console.log(data.member)
+  const name = data.member.name
+  const surname = data.member.surname
+  title.innerHTML = name + ' ' + surname
+}
 

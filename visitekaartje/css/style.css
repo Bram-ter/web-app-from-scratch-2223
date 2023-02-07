@@ -1,0 +1,33 @@
+@font-face {
+    font-family: title-font;
+    src: url(../fonts/FunnySamurai.otf) format('opentype');
+}
+
+main {
+    position: relative;
+    margin: 0 auto;
+    height: 60vh;
+    width: 85%;
+    max-width: 25em;
+    background-color: red;
+    border-radius: 10px 10px;
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 1em;
+    left: 0;
+    right: 0;
+    text-align: center;
+    border-radius: 100%;
+    width: 3.5em;
+    height: 3.5em;
+    background-color: green;
+}
+
+h1 {
+    /* font-family: "title-font";  */
+}
