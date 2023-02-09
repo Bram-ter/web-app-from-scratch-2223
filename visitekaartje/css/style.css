@@ -3,17 +3,70 @@
     src: url(../fonts/FunnySamurai.otf) format('opentype');
 }
 
-main {
-    position: relative;
+:root {
+    --card-bg-color:hsl(0, 100%, 31%);
+}
+
+h1 {
+    font-family: "title-font";
+    font-size: 1.3em;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body > main {
     margin: 0 auto;
+    max-width: 390px;
+    display: grid;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    height: 230vh;
+    transform: translateY(-50vh);
+}
+
+body > main.moveUp {
+    animation: animationUp 3s ease-in;
+    animation-fill-mode: forwards;
+}
+
+body > main > a {
+    position: relative;
+    display: flex;
+    margin-left: -7px;
+    justify-content: flex-end;
+    width: 100%;
+    z-index: 9999;
+}
+
+body > main > a > img {
+    width: 100%;
+    min-width: 40em;
+    max-width: 40em;
+    transform: translateX(7em);
+}
+
+body > main > section {
+    position: absolute;
+    width: 100%;
+    height: 50vh;
+}
+
+body > main > section > div {
     height: 60vh;
-    width: 85%;
-    max-width: 25em;
-    background-color: red;
+    width: 23em;
+    margin: 0 auto;
+    transform: translateY(55vh);
+    background-color: var(--card-bg-color);
     border-radius: 10px 10px;
 }
 
-main::before {
+body > main > section > div::before {
     content: '';
     position: absolute;
     margin-left: auto;
@@ -25,9 +78,33 @@ main::before {
     border-radius: 100%;
     width: 3.5em;
     height: 3.5em;
-    background-color: green;
+    background-color: #fff;
 }
 
-h1 {
-    /* font-family: "title-font";  */
+body > main > section > div > img {
+    flex-basis: auto;
+    min-width: 11em;
+    height: 25vh;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 26%);
+    object-fit: cover;
+}
+
+body > main > section > div > article {
+    flex-basis: auto;
+}
+
+@media (min-width: 40em) { 
+    body > main > a > img {
+        max-width: 60em;
+    }
+}
+
+@keyframes animationUp {
+    0% {
+        transform: translateY(-50vh);
+    }
+
+    100% {
+        transform: translateY(-120vh);
+    }
 }

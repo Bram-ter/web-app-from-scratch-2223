@@ -1,5 +1,7 @@
 // Variables
-const title = document.querySelector("h1");
+const title = document.querySelector('h1');
+const paragraph = document.querySelector('p');
+const card = document.querySelector('main');
 
 fetchData()
 
@@ -17,6 +19,14 @@ function changeH1(data) {
   console.log(data.member)
   const name = data.member.name
   const surname = data.member.surname
+  const bio = data.member.bio.html
+
   title.innerHTML = name + ' ' + surname
+  paragraph.innerHTML = bio
 }
+
+
+card.addEventListener ('click', () => {
+  card.classList.toggle('moveUp')
+})
 
