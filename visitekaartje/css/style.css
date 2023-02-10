@@ -43,6 +43,7 @@ body > main {
     overflow: hidden;
     height: 230vh;
     transform: translateY(-50vh);
+    /* transition-timing-function: cubic-bezier(.58,.28,.52,1.2); */
 }
 
 body > main.moveUp {
@@ -60,10 +61,8 @@ body > main > a {
 }
 
 body > main > a > img {
-    width: 100%;
-    min-width: 40em;
-    max-width: 40em;
-    transform: translateX(7em);
+    width: 40em;
+    transform: translateX(6.7em);
 }
 
 body > main > section {
@@ -154,12 +153,6 @@ body > main > section > div > ul > li > img {
 
 body > main > section > div > article {
     flex-basis: auto;
-}
-
-@media (min-width: 40em) { 
-    body > main > a > img {
-        max-width: 60em;
-    }
 }
 
 @keyframes animationUp {
