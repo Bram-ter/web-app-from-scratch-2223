@@ -1,6 +1,6 @@
 // Variables
 const title = document.querySelector('h1');
-const paragraph = document.querySelector('p');
+const paragraph = document.querySelector('article a');
 const arm = document.querySelector('a');
 const card = document.querySelector('main');
 
@@ -20,10 +20,10 @@ function changeH1(data) {
   console.log(data.member)
   const name = data.member.name
   const surname = data.member.surname
-  const nickname = data.member.nickname
+  const website = data.member.website
 
   title.innerHTML = name + ' ' + surname
-  paragraph.innerHTML = 'aka ' + nickname
+  paragraph.href = website
 }
 
 

@@ -18,9 +18,10 @@ h1 {
     font-size: 1.7em;
 }
 
-p {
+a {
     font-family: noto-font;
     font-size: 1em;
+    color: #000;
 }
 
 ul {
@@ -140,6 +141,10 @@ body > main > section > div > ul > li:first-of-type:after {
     clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 26%);
     border: 3px solid var(--gold);
     background-color: var(--gold);
+}
+
+body > main > section > div > ul > li > article > a:hover {
+    color: var(--gold);
 }
 
 body > main > section > div > ul > li > img {
