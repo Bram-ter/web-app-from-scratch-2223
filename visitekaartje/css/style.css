@@ -3,6 +3,8 @@
     --gold: hsl(47, 77%, 41%);
 }
 
+/* Fonts */
+
 @font-face {
     font-family: title-font;
     src: url(../fonts/FunnySamurai.otf) format('opentype');
@@ -12,6 +14,8 @@
     font-family: noto-font;
     src: url(../fonts/NotoSans-Bold.ttf) format('truetype');
 }
+
+/* Global */
 
 h1 {
     font-family: "title-font";
@@ -34,6 +38,8 @@ body {
     padding: 0;
     width: 100%;
 }
+
+/* Element styling */
 
 body > main {
     margin: 0 auto;
@@ -159,6 +165,8 @@ body > main > section > div > ul > li > img {
 body > main > section > div > article {
     flex-basis: auto;
 }
+
+/* Keyframes */
 
 @keyframes animationUp {
     0% {
