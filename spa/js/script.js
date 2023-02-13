@@ -10,6 +10,7 @@ function fetchData() {
   const data = fetch(url)
     .then(response => response.json())
     .then(data => {
+      console.log(data.data)
       button.addEventListener ('click', () => {
         getQuote(data)
       })
@@ -17,7 +18,9 @@ function fetchData() {
 }
 
 function getQuote(data) {
-  const name = data.data[1].text
+  const name = data.data[Math.floor(Math.random()*data.data.length)].text
+
+  console.log(name)
 
   quote.innerHTML = name
 }

@@ -35,7 +35,7 @@ html, body {
 h1 {
     color: var(--hottest-of-pink);
     font-family: title-font;
-    font-size: 4em;
+    font-size: 2em;
 }
 
 button {
