@@ -58,6 +58,12 @@ body main h1 {
     text-align: center;
 }
 
+body main article {
+    display: flex;
+    align-items: center;
+    height: 40vh;
+}
+
 body main button {
     padding: 1em 2em 1em 2em;
     transform: skew(-15deg);
