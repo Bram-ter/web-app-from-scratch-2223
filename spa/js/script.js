@@ -5,8 +5,10 @@ combineData()
 
 async function combineData() {
   console.log(await logData())
+  loadQuote()
 }
 
+/** Get two arrays with data and combine those **/
 async function logData() {
   // Get arrays with 10 quotes two times from the api
   const quote1 = await getData();
@@ -16,6 +18,7 @@ async function logData() {
   return [...quote1, ...quote2]
 }
 
+/** Fetch data from the API **/
 async function getData() {
   // API shizzle
   const options = { 
@@ -30,6 +33,28 @@ async function getData() {
   const data = await response.json()
   // 
   return data
+}
+
+/** Change the inner html of the h1 to a random value out of the array  **/
+function changeH1(data) {
+  // Random function https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+  const randomFunction = Math.floor(Math.random()*data.length)
+
+  // Randomize array gotten from data
+  const name = data[randomFunction].quote
+
+  console.log(name)
+
+  // Change HTML element to the randomized array
+  quote.innerHTML = name
+}
+
+/** Load the quote by clicking on the button **/
+function loadQuote(data) {
+  button.addEventListener ('click', () => {
+    changeH1(data)
+    console.log(data)
+  })
 }
 
 // fetchData()
@@ -48,22 +73,3 @@ async function getData() {
 //                 test(data)
 //   })
 // }
-
-function changeH1(data) {
-  // Random function https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-  const randomFunction = Math.floor(Math.random()*data.length)
-
-  // Randomize array gotten from data
-  const name = data[randomFunction].quote
-
-  console.log(name)
-
-  // Change HTML element to the randomized array
-  quote.innerHTML = name
-}
-
-function loadQuote(data) {
-  button.addEventListener ('click', () => {
-    combineData(data)
-  })
-}
