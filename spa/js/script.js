@@ -1,5 +1,6 @@
 const button = document.querySelector('button')
 const quote = document.querySelector('h1')
+let data = '' 
 
 combineData()
 
@@ -30,13 +31,14 @@ async function getData() {
   // Get API from url with API key
   const response = await fetch(url, options)
   // Return data as json
-  const data = await response.json()
+  data = await response.json()
   // 
   return data
 }
 
 /** Change the inner html of the h1 to a random value out of the array  **/
-function changeH1(data) {
+function changeH1() {
+  console.log(data)
   // Random function https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
   const randomFunction = Math.floor(Math.random()*data.length)
 
