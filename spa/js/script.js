@@ -1,13 +1,12 @@
 const button = document.querySelector('button')
 const dadJoke = document.querySelector('h1')
-const backButton = document.querySelector('body main > a:first-of-type')
 let data = '' 
 
 combineData()
 
 async function combineData() {
   console.log(await logData())
-  loadQuote()
+  changeQuote()
 }
 
 /** Get two arrays with data and combine those **/
@@ -50,11 +49,10 @@ function TitleToJoke() {
   dadJoke.innerHTML = name
 }
 
-/** Load the quote by clicking on the button **/
-function loadQuote(data) {
+/** Change the quote by clicking on the button **/
+function changeQuote(data) {
   button.addEventListener ('click', () => {
     TitleToJoke(data)
-    // dadJoke.setAttribute('href', '#')
   })
 }
 

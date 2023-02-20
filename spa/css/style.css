@@ -38,6 +38,7 @@ html, body {
 a {
     font-family: roboto-regular;
     text-decoration: none;
+    color: #000;
 }
 
 h1 {
@@ -92,14 +93,19 @@ body:before {
 body main > a {
     position: absolute;
     top: 1em;
+    font-size: 1.1em;
+}
+
+body main > a:not(:first-of-type) {
+    right: .5em;
+}
+
+body main > a:not(:first-of-type):before {
+    content: '🔍 ';
 }
 
 body main > a:first-of-type {
-    left: .5em;
-}
-
-body main > a:last-of-type {
-    right: 1em;
+    left: 1em;
 }
 
 body main h1 {
@@ -110,7 +116,6 @@ body main h1 {
 body main section {
     display: flex;
     align-items: center;
-    height: 30dvh;
 }
 
 body main button {
