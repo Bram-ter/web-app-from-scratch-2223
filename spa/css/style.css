@@ -1,11 +1,7 @@
 :root {
     --hottest-of-pink: hotpink;
-    --mooi-geel: #FBC638;
-}
-
-html, body {
-    padding: 0;
-    margin: 0;
+    --yellow: #FBC638;
+    --orange: #FF6E0C;
 }
 
 /* Fonts */
@@ -30,6 +26,16 @@ html, body {
     src: url(../fonts/Roboto-Regular.ttf) format('truetype');
 }
 
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    font-family: roboto-regular;
+    text-decoration: none;
+}
+
 /* Global */
 
 h1 {
@@ -47,6 +53,7 @@ body {
 }
 
 body main {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,11 +61,45 @@ body main {
     height: 100vh;
 }
 
-body main h1 {
-    text-align: center;
+body main:after,
+body main:before {
+    content: '';
+    position: absolute;
+    width: 5em;
+    height: 5em;
 }
 
-body main article {
+body main:after {
+    bottom: 0;
+    right: 0;
+    background-color: var(--hottest-of-pink);
+}
+
+body main:before {
+    top: 0;
+    left: 0;
+    background-color: var(--orange);
+}
+
+body main > a {
+    position: absolute;
+    top: 1em;
+}
+
+body main > a:first-of-type {
+    left: .5em;
+}
+
+body main > a:last-of-type {
+    right: 1em;
+}
+
+body main h1 {
+    text-align: center;
+    padding: 0em .5em 0em .5em;
+}
+
+body main section {
     display: flex;
     align-items: center;
     height: 30dvh;
@@ -66,7 +107,6 @@ body main article {
 
 body main button {
     padding: 1em 2em 1em 2em;
-    transform: skew(-15deg);
     border: .5em double #fff;
     background-color: var(--hottest-of-pink);
     box-shadow: 3px 3px 0 #000000;
@@ -74,5 +114,5 @@ body main button {
 }
 
 body main button:hover {
-    box-shadow: 5px 5px 0 var(--mooi-geel);
+    box-shadow: 4px 4px 0 var(--yellow);
 }

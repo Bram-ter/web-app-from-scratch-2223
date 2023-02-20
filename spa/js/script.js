@@ -1,5 +1,6 @@
 const button = document.querySelector('button')
-const quote = document.querySelector('h1')
+const dadJoke = document.querySelector('h1')
+const backButton = document.querySelector('body main > a:first-of-type')
 let data = '' 
 
 combineData()
@@ -37,8 +38,8 @@ async function getData() {
 }
 
 /** Change the inner html of the h1 to a random value out of the array  **/
-function changeH1() {
-  console.log(data)
+function TitleToJoke() {
+  // console.log(data)
   // Random function https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
   const randomizer = Math.floor(Math.random()*data.length)
 
@@ -46,12 +47,41 @@ function changeH1() {
   const name = data[randomizer].joke
 
   // Change HTML element to the randomized array
-  quote.innerHTML = name
+  dadJoke.innerHTML = name
 }
 
 /** Load the quote by clicking on the button **/
 function loadQuote(data) {
   button.addEventListener ('click', () => {
-    changeH1(data)
+    TitleToJoke(data)
+    // dadJoke.setAttribute('href', '#')
   })
 }
+
+/* Change route to search page */
+function onRouteChange() {
+  const hash = window.location.hash
+  const routerView = document.getElementById("router-view")
+
+  if (!(routerView instanceof HTMLElement)) {
+        throw new ReferenceError("No router view element available for rendering")
+  }
+
+  switch (hash) {
+      case "#home":
+        dadJoke.innerHTML = "<h1>en weer terug</h1>",
+        backButton.innerHTML = "<a></a>"
+        break;
+
+       case "#search":
+         dadJoke.innerHTML = "<h1>lekker zoeken</h1>",
+         backButton.innerHTML = "<a>👈 Back</a>"
+         break;
+   
+       default:
+         dadJoke.innerHTML = "<h1>Hmm... We can’t find that joke</h1>"
+         break;
+     }
+}
+
+window.addEventListener("hashchange", onRouteChange)
