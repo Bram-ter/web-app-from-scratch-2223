@@ -26,7 +26,7 @@ async function getData() {
     method: 'GET',
     headers: { 'X-Api-Key': '52PGo1SLf0DTCOeeIwkOLA==vn2PBEcplAZg1IJJ'},
   }
-  const url = 'https://api.api-ninjas.com/v1/quotes?limit=10'
+  const url = 'https://api.api-ninjas.com/v1/dadjokes?limit=10'
 
   // Get API from url with API key
   const response = await fetch(url, options)
@@ -43,7 +43,7 @@ function changeH1() {
   const randomizer = Math.floor(Math.random()*data.length)
 
   // Randomize array gotten from data
-  const name = data[randomizer].quote
+  const name = data[randomizer].joke
 
   // Change HTML element to the randomized array
   quote.innerHTML = name
@@ -55,20 +55,3 @@ function loadQuote(data) {
     changeH1(data)
   })
 }
-
-// fetchData()
-
-// function fetchData() {
-
-//   const options = { 
-//     method: 'GET',
-//     headers: { 'X-Api-Key': '52PGo1SLf0DTCOeeIwkOLA==vn2PBEcplAZg1IJJ'},
-//   }
-//   const url = 'https://api.api-ninjas.com/v1/quotes?limit=10'
-  
-//   fetch(url, options).then(response => response.json())
-//               .then(data => {
-//                 console.log(data)
-//                 test(data)
-//   })
-// }

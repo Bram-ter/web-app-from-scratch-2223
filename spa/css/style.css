@@ -61,7 +61,7 @@ body main h1 {
 body main article {
     display: flex;
     align-items: center;
-    height: 40vh;
+    height: 30dvh;
 }
 
 body main button {
