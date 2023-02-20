@@ -40,12 +40,10 @@ async function getData() {
 function changeH1() {
   console.log(data)
   // Random function https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-  const randomFunction = Math.floor(Math.random()*data.length)
+  const randomizer = Math.floor(Math.random()*data.length)
 
   // Randomize array gotten from data
-  const name = data[randomFunction].quote
-
-  console.log(name)
+  const name = data[randomizer].quote
 
   // Change HTML element to the randomized array
   quote.innerHTML = name
@@ -55,7 +53,6 @@ function changeH1() {
 function loadQuote(data) {
   button.addEventListener ('click', () => {
     changeH1(data)
-    console.log(data)
   })
 }
 
