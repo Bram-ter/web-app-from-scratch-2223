@@ -1,5 +1,7 @@
+/* Variables */
+
 :root {
-    --hottest-of-pink: hotpink;
+    --hottest-of-pink: #ff69b4;
     --yellow: #FBC638;
     --orange: #FF6E0C;
 }
@@ -26,6 +28,8 @@
     src: url(../fonts/Roboto-Regular.ttf) format('truetype');
 }
 
+/* Global */
+
 html, body {
     padding: 0;
     margin: 0;
@@ -35,8 +39,6 @@ a {
     font-family: roboto-regular;
     text-decoration: none;
 }
-
-/* Global */
 
 h1 {
     color: var(--hottest-of-pink);
@@ -49,11 +51,11 @@ button {
 }
 
 body {
+    position: relative;
     height: 100%;
 }
 
 body main {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,24 +63,30 @@ body main {
     height: 100vh;
 }
 
-body main:after,
-body main:before {
+body:after,
+body:before {
     content: '';
     position: absolute;
-    width: 5em;
-    height: 5em;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
-body main:after {
+body:after {
     bottom: 0;
     right: 0;
-    background-color: var(--hottest-of-pink);
+    width: 25em;
+    height: 15em;
+    background-image: url(../assets/klodder2.svg);
+    background-position: bottom;
 }
 
-body main:before {
+body:before {
     top: 0;
     left: 0;
-    background-color: var(--orange);
+    width: 12em;
+    height: 12em;
+    background-image: url(../assets/klodder.svg);
+    background-position: top;
 }
 
 body main > a {

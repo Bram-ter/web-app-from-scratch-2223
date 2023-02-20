@@ -69,14 +69,16 @@ function onRouteChange() {
 
   switch (hash) {
       case "#home":
-        dadJoke.innerHTML = "<h1>en weer terug</h1>",
-        backButton.innerHTML = "<a></a>"
+        fetch('index.html')
+        .then((response) => response.text())
+        .then(html => routerView.innerHTML = html)
         break;
 
        case "#search":
-         dadJoke.innerHTML = "<h1>lekker zoeken</h1>",
-         backButton.innerHTML = "<a>👈 Back</a>"
-         break;
+        fetch('pages/search.html')
+        .then((response) => response.text())
+        .then(html => routerView.innerHTML = html)
+        break;
    
        default:
          dadJoke.innerHTML = "<h1>Hmm... We can’t find that joke</h1>"
