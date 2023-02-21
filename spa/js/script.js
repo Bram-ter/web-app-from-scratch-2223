@@ -1,6 +1,5 @@
 const button = document.querySelector('button')
 const dadJoke = document.querySelector('h1')
-let data = '' 
 
 changeQuote()
 
