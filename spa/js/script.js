@@ -1,3 +1,6 @@
+import getData from "./api.js"
+// import TitleToJoke from "./render.js"
+
 const button = document.querySelector('button')
 const dadJoke = document.querySelector('h1')
 
@@ -11,23 +14,6 @@ async function logData() {
 
   // Break apart both arrays and return them as a single one
   return [...quote1, ...quote2]
-}
-
-/** Fetch data from the API **/
-async function getData() {
-  // API shizzle
-  const options = { 
-    method: 'GET',
-    headers: { 'X-Api-Key': '52PGo1SLf0DTCOeeIwkOLA==vn2PBEcplAZg1IJJ'},
-  }
-  const url = 'https://api.api-ninjas.com/v1/dadjokes?limit=10'
-
-  // Get API from url with API key
-  const response = await fetch(url, options)
-  // Return data as json
-  data = await response.json()
-  // 
-  return data
 }
 
 /** Randomizer array gotten from the api  **/
@@ -57,7 +43,7 @@ async function TitleToJoke(output) {
 function changeQuote() {
   button.addEventListener ('click', () => {
     TitleToJoke()
-  })
+  }, false)
 }
 
 /* Change route to search page */
