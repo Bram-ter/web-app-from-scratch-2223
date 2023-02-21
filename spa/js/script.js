@@ -2,17 +2,12 @@ const button = document.querySelector('button')
 const dadJoke = document.querySelector('h1')
 let data = '' 
 
-combineData()
-
-async function combineData() {
-  console.log(await logData())
-  changeQuote()
-}
+changeQuote()
 
 /** Get two arrays with data and combine those **/
 async function logData() {
   // Get arrays with 10 quotes two times from the api
-  const quote1 = await getData();
+  const quote1 = await getData()
   const quote2 = await getData()
 
   // Break apart both arrays and return them as a single one
@@ -37,21 +32,26 @@ async function getData() {
 }
 
 /** Randomizer array gotten from the api  **/
-function randomizeArray() {
-  // console.log(data)
+async function randomizeArray() {
+  
+  const combinedArray = await logData()
+
   // Random function https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-  const randomizer = Math.floor(Math.random()*data.length)
+  // const randomizer = Math.floor(Math.random()*combinedArray.length)
+  const randomizer = combinedArray[Math.floor(combinedArray.length * Math.random())]
 
-  // Randomize array gotten from data
-  const name = data[randomizer].joke
+  // // Randomize array gotten from data
+  const output = randomizer.joke
 
-  return name
+  console.log(output)
+
+  return output
 }
 
 /** Change the inner html of the h1 to a random value out of the array  **/
-function TitleToJoke(name) {
+async function TitleToJoke(output) {
   // Change HTML element to the randomized array
-  dadJoke.innerHTML = randomizeArray(name)
+  dadJoke.innerHTML = await randomizeArray(output)
 }
 
 /** Change the quote by clicking on the button **/
