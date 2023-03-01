@@ -1,3 +1,4 @@
+/** Imports **/
 import getData from "./api.js"
 
 /** Get two arrays with data and combine those **/

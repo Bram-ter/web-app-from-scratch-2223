@@ -1,3 +1,4 @@
+/** Imports **/
 import logData from "./data.js"
 
 /** Change the inner html of the h1 to a random value out of the array  **/
