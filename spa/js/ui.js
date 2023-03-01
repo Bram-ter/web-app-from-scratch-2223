@@ -1,7 +1,14 @@
 import logData from "./data.js"
 
+/** Change the inner html of the h1 to a random value out of the array  **/
+export async function TitleToJoke(output) {
+    const dadJoke = document.querySelector('h1')
+    // Change HTML element to the randomized array
+    dadJoke.innerHTML = await randomizeArray(output)
+}
+
 /** Randomizer array gotten from the api  **/
-async function randomizeArray() {
+export async function randomizeArray() {
   
     const combinedArray = await logData()
   
@@ -16,5 +23,3 @@ async function randomizeArray() {
   
     return output
   }
-
-export default randomizeArray;
