@@ -1,17 +1,22 @@
 /** Imports **/
 import logData from "./data.js"
+import { stopLoading } from "./states.js"
 
 /** Change the inner html of the h1 to a random value out of the array  **/
 export async function TitleToJoke(output) {
     const heading = document.querySelector('h1')
     // Change HTML element to the randomized array
     heading.innerHTML = await randomizeArray(output)
+
+    stopLoading()
 }
 
 /** Randomizer array gotten from the api  **/
 export async function randomizeArray() {
   
     const combinedArray = await logData()
+
+    console.log(await logData())
   
     // Random function https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
     // const randomizer = Math.floor(Math.random()*combinedArray.length)

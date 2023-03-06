@@ -1,6 +1,6 @@
 /** Imports **/
 import {TitleToJoke} from "./ui.js"
-import {loadingState, stopLoading} from "./states.js"
+import {loadingState, startLoading} from "./states.js"
 
 /** Change the quote by clicking on the button **/
 function changeQuote() {
@@ -8,8 +8,8 @@ function changeQuote() {
 
   button.addEventListener ('click', () => {
     loadingState()
+    startLoading()
     TitleToJoke()
-    stopLoading()
   })
 }
 
