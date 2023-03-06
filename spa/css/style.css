@@ -2,8 +2,15 @@
 
 :root {
     --hottest-of-pink: #ff69b4;
+    --disabled-grey: hsl(0, 0%, 75%);
     --yellow: #FBC638;
     --orange: #FF6E0C;
+}
+
+/* ToggleClasses */
+
+.disabled {
+    color: var(--disabled-grey);
 }
 
 /* Fonts */
@@ -116,6 +123,11 @@ body main button {
     background-color: var(--hottest-of-pink);
     box-shadow: 3px 3px 0 #000000;
     transition: box-shadow 0.5s;
+}
+
+body main button:disabled {
+    box-shadow: 3px 3px 0 var(--disabled-grey);
+    background-color: var(--disabled-grey);
 }
 
 body main button:hover {
