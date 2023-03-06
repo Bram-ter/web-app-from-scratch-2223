@@ -1,12 +1,12 @@
 /** Different states **/
-export function loadingState() {
+export function startLoading() {
   const button = document.querySelector('button')
 
   button.setAttribute("disabled", true)
   button.innerHTML = 'Loading bad joke' 
 }
 
-export function startLoading() {
+export function disableElement() {
   const heading = document.querySelector('h1')
 
   heading.innerHTML = "A bad joke is on it's way!"

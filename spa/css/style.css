@@ -11,6 +11,33 @@
 
 .disabled {
     color: var(--disabled-grey);
+    animation-name: loading;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+/* Keyframes */
+
+@keyframes loading {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0.25;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0.25;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Fonts */
@@ -130,7 +157,7 @@ body main button:disabled {
     background-color: var(--disabled-grey);
 }
 
-body main button:hover {
+body main button:hover:enabled {
     box-shadow: 4px 4px 0 var(--yellow);
 }
 

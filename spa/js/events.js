@@ -1,16 +1,18 @@
-/** Imports **/
-import {TitleToJoke} from "./ui.js"
-import {loadingState, startLoading} from "./states.js"
+import { TitleToJoke } from "./ui.js";
+import { startLoading, disableElement } from "./states.js";
 
-/** Change the quote by clicking on the button **/
 function changeQuote() {
-  const button = document.querySelector('button')
+  const container = document.querySelector('main'); // use a common parent element
 
-  button.addEventListener ('click', () => {
-    loadingState()
-    startLoading()
-    TitleToJoke()
-  })
+  container.addEventListener('click', event => {
+    const button = event.target.closest('button'); // get the closest button element
+
+    if (button !== null) {
+      startLoading();
+      disableElement();
+      TitleToJoke();
+    }
+  });
 }
 
 export default changeQuote;
