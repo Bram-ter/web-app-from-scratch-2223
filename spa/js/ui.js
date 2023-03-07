@@ -1,3 +1,5 @@
+import { stopLoading } from "./states.js";
+
 /** Randomizer array gotten from the api  **/
  export function parseSession() {
   
@@ -33,4 +35,5 @@
     const heading = document.querySelector('h1')
     // Change HTML element to the randomized array
     heading.innerHTML = makeRandom()
+    stopLoading()
 }
