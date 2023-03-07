@@ -9,8 +9,6 @@ export function changeQuote() {
     const button = event.target.closest('button'); // get the closest button element
 
     if (button !== null) {
-      // TitleToJoke()
-      // combineArray()
       TitleToJoke()
     }
   });
