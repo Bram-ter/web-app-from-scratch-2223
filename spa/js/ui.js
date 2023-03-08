@@ -6,7 +6,7 @@ import { stopLoading } from "./states.js";
     // Get the array from session storage
     const combinedArray = sessionStorage.getItem('dadJokes')
   
-    // Parse the JSON string back into an JavaScript object
+    // Parse the JSON string back into an JavaScript array
     const parseArray = JSON.parse(combinedArray);
   
     return parseArray
@@ -20,10 +20,10 @@ import { stopLoading } from "./states.js";
     // Get the array and randomize it into a number
     const randomizer = Math.floor(Math.random() * gottenArray.length);
   
-    // Get that number and get the string value
+    // Get that number and get the object
     const randomizeArray = gottenArray[randomizer.toString()];
   
-    // Take the random number and get the key value from it
+    // Take the object and get the key value
     const dadJoke = randomizeArray.joke
   
     console.log(dadJoke)
@@ -53,13 +53,28 @@ import { stopLoading } from "./states.js";
 
 // export function printItems() {
 //   const gottenArray = parseSession()
-//   const list = document.querySelector('ul')
+//   const ul = document.createElement('ul');
 
-//   console.log(gottenArray)
-  
-//   gottenArray.map((item) => {
-//     const li = document.createElement("li")
-//     li.innerText = item.joke
-//     list.appendChild(li)
-//   })
+//   gottenArray.forEach(joke => {
+//     const li = document.createElement('li');
+//     li.innerText = joke.joke;
+//     ul.appendChild(li);
+//   });
+
+//   document.body.appendChild(ul);
 // }
+
+export function printItems() {
+  const gottenArray = parseSession()
+  const ul = document.createElement('ul')
+
+  const liArray = gottenArray.map(joke => {
+    const li = document.createElement('li')
+    li.innerText = joke.joke;
+    return li
+  });
+
+  ul.append(...liArray);
+
+  document.body.appendChild(ul);
+}

@@ -72,6 +72,15 @@ h1 {
     font-size: 2em;
 }
 
+ul {
+    background-color: #F16CA8;
+    padding: 0;
+    margin: 1em 0 0 0;
+    font-family: roboto-flex;
+    font-weight: 500;
+    list-style-type: none;
+}
+
 button {
     font-family: roboto-flex;
     font-weight: 400;
@@ -99,7 +108,7 @@ body:before {
 }
 
 body:after {
-    bottom: 0;
+    top: 75dvh;
     right: 0;
     width: 25em;
     height: 15em;
@@ -114,6 +123,17 @@ body:before {
     height: 12em;
     background-image: url(../assets/klodder.svg);
     background-position: top;
+}
+
+body ul {
+    padding: 1.5em;
+}
+
+body ul li {
+    padding: 1em 2em 1em 2em;
+    border: .5em double #fff;
+    background-color: var(--hottest-of-pink);
+    box-shadow: 3px 3px 0 #000000;
 }
 
 body main > a {

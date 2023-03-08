@@ -1,3 +1,5 @@
+import { printItems } from "./ui.js"
+
 /* Routing */
 function onRouteChange() {
   const hash = window.location.hash
@@ -14,7 +16,7 @@ function onRouteChange() {
 
   switch (hash) {
       case "#home":
-        fetch('pages/home.html')
+        fetch('index.html')
         .then((response) => response.text())
         .then(html => routerView.innerHTML = html)
         break;
@@ -23,6 +25,7 @@ function onRouteChange() {
         fetch('pages/search.html')
         .then((response) => response.text())
         .then(html => routerView.innerHTML = html)
+        printItems()
         break;
    
        default:
