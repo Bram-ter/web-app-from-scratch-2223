@@ -37,3 +37,29 @@ import { stopLoading } from "./states.js";
     heading.innerHTML = makeRandom()
     stopLoading()
 }
+
+// export function searchInput() {
+//   const gottenArray = parseSession()
+//   const searchJoke = document.getElementById("search").value;
+
+//   const index = gottenArray.findIndex(obj => obj.joke === searchJoke);
+
+//   if (index !== -1) {
+//   console.log(`Found joke at index ${index}`);
+//   } else {
+//   console.log(`Joke not found in array`);
+//   }
+// }
+
+// export function printItems() {
+//   const gottenArray = parseSession()
+//   const list = document.querySelector('ul')
+
+//   console.log(gottenArray)
+  
+//   gottenArray.map((item) => {
+//     const li = document.createElement("li")
+//     li.innerText = item.joke
+//     list.appendChild(li)
+//   })
+// }

@@ -28,6 +28,7 @@ async function getData() {
 
   } catch (error) {
     console.error(error);
+    heading.innerHTML = "Hmm... We can’t find that joke"
   }
 }
 
