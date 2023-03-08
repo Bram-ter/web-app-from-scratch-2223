@@ -68,13 +68,13 @@ export function printItems() {
   const gottenArray = parseSession()
   const ul = document.createElement('ul')
 
-  const liArray = gottenArray.map(joke => {
+  const mapJokes = gottenArray.map(joke => {
     const li = document.createElement('li')
     li.innerText = joke.joke;
     return li
   });
 
-  ul.append(...liArray);
+  ul.append(...mapJokes);
 
   document.body.appendChild(ul);
 }
