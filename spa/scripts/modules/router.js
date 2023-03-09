@@ -16,7 +16,7 @@ function onRouteChange() {
 
   switch (hash) {
       case "#home":
-        fetch('index.html')
+        fetch('pages/home.html')
         .then((response) => response.text())
         .then(html => routerView.innerHTML = html)
         break;
@@ -29,7 +29,9 @@ function onRouteChange() {
         break;
    
        default:
-         heading.innerHTML = "Hmm... We can’t find that joke"
+        fetch('pages/error.html')
+        .then((response) => response.text())
+        .then(html => routerView.innerHTML = html)
         break;
      }
 }

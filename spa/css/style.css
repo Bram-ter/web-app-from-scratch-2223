@@ -164,7 +164,13 @@ body main section {
     align-items: center;
 }
 
-body main button {
+body main article {
+    margin-top: 1em;
+}
+
+body main button,
+body main article > a {
+    font-size: 13.3px;
     padding: 1em 2em 1em 2em;
     border: .5em double #fff;
     background-color: var(--hottest-of-pink);
@@ -177,7 +183,9 @@ body main button:disabled {
     background-color: var(--disabled-grey);
 }
 
-body main button:hover:enabled {
+body main button:hover:enabled,
+body main article > a:hover {
+    cursor: pointer;
     box-shadow: 4px 4px 0 var(--yellow);
 }
 
