@@ -1,4 +1,3 @@
-// import { TitleToJoke } from "./ui.js";
 import { startLoading, disableElement } from "./states.js";
 import { TitleToJoke } from "./ui.js";
 
