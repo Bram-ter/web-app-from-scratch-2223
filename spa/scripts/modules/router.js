@@ -14,6 +14,11 @@ function onRouteChange() {
         throw new ReferenceError("No router view element available for rendering")
   }
 
+  const existingUl = document.querySelector('ul');
+  if (existingUl) {
+    existingUl.remove();
+  }
+
   switch (hash) {
       case "#home":
         fetch('views/home.html')
