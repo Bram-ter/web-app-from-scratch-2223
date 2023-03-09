@@ -14,9 +14,9 @@ function onRouteChange() {
         throw new ReferenceError("No router view element available for rendering")
   }
 
-  const existingUl = document.querySelector('ul');
-  if (existingUl) {
-    existingUl.remove();
+  const searchUl = document.querySelector('ul');
+  if (searchUl) {
+    searchUl.remove();
   }
 
   switch (hash) {
