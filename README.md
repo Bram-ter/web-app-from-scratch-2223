@@ -1,4 +1,4 @@
-# Dadjoke generator 👨
+# Dadjoke generator 👨🏻
 
 
 ## What's used in this project?
