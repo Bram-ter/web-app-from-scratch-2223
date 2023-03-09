@@ -16,20 +16,20 @@ function onRouteChange() {
 
   switch (hash) {
       case "#home":
-        fetch('pages/home.html')
+        fetch('views/home.html')
         .then((response) => response.text())
         .then(html => routerView.innerHTML = html)
         break;
 
        case "#search":
-        fetch('pages/search.html')
+        fetch('views/search.html')
         .then((response) => response.text())
         .then(html => routerView.innerHTML = html)
         printItems()
         break;
    
        default:
-        fetch('pages/error.html')
+        fetch('views/error.html')
         .then((response) => response.text())
         .then(html => routerView.innerHTML = html)
         break;
