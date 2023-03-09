@@ -1,6 +1,5 @@
 /** Fetch data from the API **/
-async function getData() {
-  try {
+export async function getData() {
   // API shizzle
   const options = { 
     method: 'GET',
@@ -25,11 +24,16 @@ async function getData() {
   
   console.log('Data stored in session storage successfully!');
   // return await response.json()
-
-  } catch (error) {
-    console.error(error);
-    heading.innerHTML = "Hmm... We can’t find that joke"
-  }
 }
 
-export default getData;
+/** Randomizer array gotten from the api  **/
+export function parseSession() {
+  
+  // Get the array from session storage
+  const combinedArray = sessionStorage.getItem('dadJokes')
+
+  // Parse the JSON string back into an JavaScript array
+  const parseArray = JSON.parse(combinedArray);
+
+  return parseArray
+}
