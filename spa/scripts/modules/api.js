@@ -26,13 +26,13 @@ export async function getData() {
   // return await response.json()
 }
 
-/** Randomizer array gotten from the api  **/
+/** Get string from the sessionStorage and make it a JavaScript object again  **/
 export function parseSession() {
   
-  // Get the array from session storage
+  // Get the string from session storage
   const combinedArray = sessionStorage.getItem('dadJokes')
 
-  // Parse the JSON string back into an JavaScript array
+  // Parse the JSON string back into a JavaScript object
   const parseArray = JSON.parse(combinedArray);
 
   return parseArray
