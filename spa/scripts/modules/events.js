@@ -2,11 +2,14 @@ import { startLoading, disableElement } from "./states.js";
 import { TitleToJoke } from "./ui.js";
 
 export function changeQuote() {
-  const container = document.querySelector('main'); // use a common parent element
+  // Use a common parent element
+  const container = document.querySelector('main');
 
   container.addEventListener('click', event => {
-    const button = event.target.closest('button'); // get the closest button element
+    // Get the closest button element
+    const button = event.target.closest('button');
 
+    // Check if button exists
     if (button !== null) {
       startLoading()
       disableElement()
